@@ -1,0 +1,422 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --card-bg: #1a1a1a;
+  --border: #2a2a2a;
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --error: #ef4444;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--card-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3a3a;
+}
+
+/* Custom classes */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+}
+
+.btn-secondary {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  color: var(--foreground);
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+  background: var(--border);
+}
+
+/* Kanban column colors */
+.kanban-planned {
+  border-top: 3px solid var(--warning);
+}
+
+.kanban-in-progress {
+  border-top: 3px solid var(--accent);
+}
+
+.kanban-done {
+  border-top: 3px solid var(--success);
+}
+
+/* Markdown content styling (legacy - for raw text display) */
+.markdown-content h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 1rem 0 0.5rem;
+}
+
+.markdown-content h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0.75rem 0 0.5rem;
+}
+
+.markdown-content h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0.5rem 0 0.25rem;
+}
+
+.markdown-content p {
+  margin: 0.5rem 0;
+}
+
+.markdown-content ul, .markdown-content ol {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.markdown-content li {
+  margin: 0.25rem 0;
+}
+
+.markdown-content code {
+  background: var(--border);
+  padding: 0.125rem 0.25rem;
+  border-radius: 4px;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.875rem;
+}
+
+.markdown-content pre {
+  background: var(--border);
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin: 0.5rem 0;
+}
+
+.markdown-content pre code {
+  background: none;
+  padding: 0;
+}
+
+.markdown-content blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+  margin: 0.5rem 0;
+  color: #999;
+}
+
+.markdown-content a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.markdown-content hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 1rem 0;
+}
+
+/* Rendered Markdown styling (react-markdown) */
+.markdown-rendered {
+  line-height: 1.6;
+}
+
+.markdown-rendered h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 1.5rem 0 0.75rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--foreground);
+}
+
+.markdown-rendered h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 1.25rem 0 0.5rem;
+  color: var(--foreground);
+}
+
+.markdown-rendered h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 1rem 0 0.4rem;
+  color: var(--foreground);
+}
+
+.markdown-rendered h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0.75rem 0 0.3rem;
+  color: var(--foreground);
+}
+
+.markdown-rendered p {
+  margin: 0.75rem 0;
+}
+
+.markdown-rendered ul, .markdown-rendered ol {
+  margin: 0.75rem 0;
+  padding-left: 1.75rem;
+}
+
+.markdown-rendered ul {
+  list-style-type: disc;
+}
+
+.markdown-rendered ol {
+  list-style-type: decimal;
+}
+
+.markdown-rendered li {
+  margin: 0.35rem 0;
+}
+
+.markdown-rendered li > ul,
+.markdown-rendered li > ol {
+  margin: 0.25rem 0;
+}
+
+/* Inline code */
+.markdown-rendered code:not(pre code) {
+  background: #1e293b;
+  color: #e2e8f0;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.875em;
+}
+
+/* Code blocks */
+.markdown-rendered pre {
+  background: #0f172a;
+  border: 1px solid var(--border);
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.markdown-rendered pre code {
+  background: none;
+  color: #e2e8f0;
+  padding: 0;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* Blockquotes */
+.markdown-rendered blockquote {
+  border-left: 4px solid var(--accent);
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 0 6px 6px 0;
+}
+
+.markdown-rendered blockquote p {
+  margin: 0.25rem 0;
+  color: #94a3b8;
+}
+
+/* Links */
+.markdown-rendered a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.markdown-rendered a:hover {
+  color: var(--accent-hover);
+}
+
+/* Horizontal rule */
+.markdown-rendered hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 1.5rem 0;
+}
+
+/* Tables */
+.markdown-rendered table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+
+.markdown-rendered thead {
+  background: #1e293b;
+}
+
+.markdown-rendered th {
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  color: var(--foreground);
+}
+
+.markdown-rendered td {
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+}
+
+.markdown-rendered tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.markdown-rendered tbody tr:hover {
+  background: rgba(59, 130, 246, 0.05);
+}
+
+/* Task lists (GFM) */
+.markdown-rendered input[type="checkbox"] {
+  margin-right: 0.5rem;
+  accent-color: var(--accent);
+}
+
+/* Images */
+.markdown-rendered img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin: 1rem 0;
+}
+
+/* Strikethrough */
+.markdown-rendered del {
+  color: #64748b;
+}
+
+/* Strong and emphasis */
+.markdown-rendered strong {
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.markdown-rendered em {
+  font-style: italic;
+}
+
+/* Syntax highlighting (highlight.js dark theme) */
+.hljs {
+  color: #e2e8f0;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #64748b;
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-addition {
+  color: #c084fc;
+}
+
+.hljs-number,
+.hljs-string,
+.hljs-meta .hljs-meta-string,
+.hljs-literal,
+.hljs-doctag,
+.hljs-regexp {
+  color: #86efac;
+}
+
+.hljs-title,
+.hljs-section,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class {
+  color: #60a5fa;
+}
+
+.hljs-attribute,
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-class .hljs-title,
+.hljs-type {
+  color: #fbbf24;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-subst,
+.hljs-meta,
+.hljs-meta .hljs-keyword,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-link {
+  color: #f472b6;
+}
+
+.hljs-built_in,
+.hljs-deletion {
+  color: #fb7185;
+}
+
+.hljs-params {
+  color: #fdba74;
+}
+
+.hljs-formula {
+  background-color: #1e293b;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}

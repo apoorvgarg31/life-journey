@@ -1,0 +1,21 @@
+{
+  "name": "life-journey",
+  "version": "1.0.0",
+  "description": "Visual dashboard for your agent memories, daily notes, and journey.",
+  "homepage": "https://github.com/apoorvgarg31/life-journey",
+  "author": "Apoorv Garg",
+  "license": "MIT",
+  "metadata": {
+    "emoji": "📔",
+    "category": "productivity",
+    "tags": ["dashboard", "memory", "tasks", "visualization"]
+  },
+  "files": {
+    "skill": "SKILL.md",
+    "heartbeat": "HEARTBEAT.md"
+  },
+  "install": {
+    "command": "npx @apoorvgarg/life-journey setup",
+    "interactive": true
+  }
+}
