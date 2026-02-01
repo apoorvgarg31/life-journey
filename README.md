@@ -17,10 +17,20 @@ A beautiful web dashboard to visualize your AI agent's memories, tasks, and dail
 ## Quick Start
 
 ```bash
+# Install globally
+npm install -g @apoorvgarg/life-journey
+
 # Interactive setup
-npx @apoorvgarg/life-journey setup
+life-journey setup
 
 # Start the dashboard
+life-journey start
+```
+
+Or use npx without installing:
+
+```bash
+npx @apoorvgarg/life-journey setup
 npx @apoorvgarg/life-journey start
 ```
 
