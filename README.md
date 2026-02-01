@@ -18,7 +18,7 @@ A beautiful web dashboard to visualize your AI agent's memories, tasks, and dail
 
 ```bash
 # Install globally
-npm install -g @apoorvgarg/life-journey
+npm install -g @apoorvgarg-31/life-journey
 
 # Interactive setup
 life-journey setup
@@ -30,8 +30,8 @@ life-journey start
 Or use npx without installing:
 
 ```bash
-npx @apoorvgarg/life-journey setup
-npx @apoorvgarg/life-journey start
+npx @apoorvgarg-31/life-journey setup
+npx @apoorvgarg-31/life-journey start
 ```
 
 The setup wizard will:
@@ -43,19 +43,19 @@ The setup wizard will:
 
 | Command | Description |
 |---------|-------------|
-| `npx @apoorvgarg/life-journey setup` | Configure your workspace interactively |
-| `npx @apoorvgarg/life-journey start` | Start the dashboard server |
-| `npx @apoorvgarg/life-journey stop` | Stop the dashboard server |
-| `npx @apoorvgarg/life-journey status` | Check if dashboard is running |
+| `npx @apoorvgarg-31/life-journey setup` | Configure your workspace interactively |
+| `npx @apoorvgarg-31/life-journey start` | Start the dashboard server |
+| `npx @apoorvgarg-31/life-journey stop` | Stop the dashboard server |
+| `npx @apoorvgarg-31/life-journey status` | Check if dashboard is running |
 
 ### Options
 
 ```bash
 # Start on a different port
-npx @apoorvgarg/life-journey start --port 8080
+npx @apoorvgarg-31/life-journey start --port 8080
 
 # Start without opening browser
-npx @apoorvgarg/life-journey start --no-open
+npx @apoorvgarg-31/life-journey start --no-open
 ```
 
 ## Configuration
